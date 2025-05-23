@@ -1,0 +1,20 @@
+#!/bin/bash
+
+DEB="$1"
+
+if [ -z "$DEB" ]; then
+  echo "Penggunaan: indoinstall nama-aplikasi.deb"
+  exit 1
+fi
+
+zenity --question --title="Installer Lokal" \
+  --text="Mau install aplikasi $DEB?" \
+  --ok-label="Yoi, bro" \
+  --cancel-label="Nggak dulu deh"
+
+if [ $? = 0 ]; then
+  pkexec dpkg -i "$DEB"
+else
+  echo "Instalasi dibatalkan."
+fi
+

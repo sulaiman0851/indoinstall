@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=IndoInstall
+Exec=indoinstall %f
+MimeType=application/vnd.debian.binary-package;
+Terminal=true
+Type=Application
+NoDisplay=true
+
